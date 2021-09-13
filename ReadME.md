@@ -39,7 +39,7 @@ We public our VDA with 4 base models. For single sentence classification tasks, 
 
 * ***text_classifier_smix.py*** and ***text_pair_classifier_smix.py***: Smix+VDA on BERT-base, where we remove the adversarial data augmentation for fair comparison
 
-We provide example scripts for both training and test of our VDA on the 6 datasets. In `run_train.sh`, we provide 6 example for training on the yelp dataset. This script calls `text_classifier_xxx.py` for training (xxx refers to the base model). We explain the arguments in following:
+We provide example scripts for both training and test of our VDA on the 6 datasets. In `run_train.sh`, we provide 6 example for training on the yelp and qnli datasets. This script calls `text_classifier_xxx.py` for training (xxx refers to the base model). We explain the arguments in following:
 * `--dataset`: Training file path.
 * `--mlm_path`: Pre-trained checkpoints to start with. For now we support BERT-based models (`bert-base-uncased`, `bert-large-uncased`, etc.)
 * `--save_path`: Saved fine-tuned checkpoints file.
@@ -61,7 +61,7 @@ Our evaluation code for robustness is based on a modified version of [BERT-Attac
 Before evaluation, please download the evaluation datasets for Robustness from the [GoogleDisk](https://drive.google.com/drive/folders/10Tl2kc6n-mtbAFnk_u0S2Q2cQjNMPR_7?usp=sharing).
 Then, following the commonly-used settings, users need to download and process consine similarity matrix following [TextFooler](https://github.com/jind11/TextFooler).
 
-Based on the checkpoint of the fine-tuned models, we use the`run_test.sh` script for test the robustness on yelp dataset. It is based on `bert_robust.py` file. We explain the arguments in following:
+Based on the checkpoint of the fine-tuned models, we use the`run_test.sh` script for test the robustness on yelp and qnli datasets. It is based on `bert_robust.py` file. We explain the arguments in following:
 * `--data_path`: Training file path.
 * `--mlm_path`: Pre-trained checkpoints to start with. For now we support BERT-based models (`bert-base-uncased`, `bert-large-uncased`, etc.)
 * `--tgt_path`: The fine-tuned checkpoints file.
